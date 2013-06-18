@@ -1,16 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Amarok.Bootstrap.Domain.Repository;
 using System.Web.Mvc;
 
 namespace Amarok.Bootstrap.Controllers
 {
     public class HomeController : Controller
     {
+        private IFeatureRepository featureRepository;
+
+        public HomeController(IFeatureRepository featureRepository)
+        {
+            this.featureRepository = featureRepository;
+        }
+
         public ActionResult Index()
         {
             ViewBag.Message = "Seja bem vindo!";
+            ViewBag.ActiveFeatures = this.featureRepository.ActiveFeatures();
 
             return View();
         }

@@ -35,6 +35,9 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Moq">
+      <HintPath>..\..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -103,6 +106,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Amarok.Bootstrap.Domain\Amarok.Bootstrap.Domain.csproj">
+      <Project>{cc2866d0-9920-4291-9e6f-0d262236e13b}</Project>
+      <Name>Amarok.Bootstrap.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Amarok.Bootstrap\Amarok.Bootstrap.csproj">
       <Project>{EE0AF1C0-6CEA-4F65-90C2-F4A4843EF6F6}</Project>
       <Name>Amarok.Bootstrap</Name>
