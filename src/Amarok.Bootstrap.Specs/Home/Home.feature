@@ -6,4 +6,4 @@ Funcionalidade: Home
 
 Cenário: Entrar na home com sucesso
 	Quando eu acessar a home do site
-	Então preciso ver o texto "Seja bem vindo"
+	Então preciso ver o texto "Seja bem vindo!"

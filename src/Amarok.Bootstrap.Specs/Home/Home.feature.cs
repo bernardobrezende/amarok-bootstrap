@@ -71,7 +71,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 8
  testRunner.When("eu acessar a home do site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line 9
- testRunner.Then("preciso ver o texto \"Seja bem vindo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+ testRunner.Then("preciso ver o texto \"Seja bem vindo!\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
             this.ScenarioCleanup();
         }
