@@ -8,9 +8,13 @@ Bootstrap sample for .NET Web applications.
 
  `git clone git://github.com/bernardobrezende/amarok-bootstrap.git`
  
-2. Follow these instructions from [NuGet docs](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages).
+2. Follow these instructions from [NuGet docs](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages)
 
-3. Under `setup` dir, install `TechTalk.SpecFlow.Vs2010Integration.vsix`.
+3. Under `setup` dir, install `TechTalk.SpecFlow.Vs2010Integration.vsix`
+
+4. Open `Amarok.Bootstrap.sln` file on your favorite IDE.
+
+5. Happy coding.
 
 # License
 
