@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio Express 2012 for Web
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amarok.Bootstrap", "src\Amarok.Bootstrap\Amarok.Bootstrap.csproj", "{EE0AF1C0-6CEA-4F65-90C2-F4A4843EF6F6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amarok.Bootstrap.Tests", "src\Amarok.Bootstrap.Tests\Amarok.Bootstrap.Tests.csproj", "{6C253D93-4065-4312-9E74-6F70ED5BEB30}"
@@ -16,6 +16,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amarok.Bootstrap.Domain", "src\Amarok.Bootstrap.Domain\Amarok.Bootstrap.Domain.csproj", "{CC2866D0-9920-4291-9E6F-0D262236E13B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amarok.Bootstrap.Infrastructure", "src\Amarok.Bootstrap.Infrastructure\Amarok.Bootstrap.Infrastructure.csproj", "{9C231DD8-6858-4605-A451-C90518292604}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9C1FE785-0110-4266-8642-4C13273F3A98}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
