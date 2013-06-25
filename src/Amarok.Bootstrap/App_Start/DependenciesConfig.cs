@@ -1,7 +1,11 @@
-﻿using Amarok.Bootstrap.Domain.Repository;
+﻿using Amarok.Bootstrap.Domain.Entities;
+using Amarok.Bootstrap.Domain.Repository;
+using Amarok.Bootstrap.Infrastructure.Mapping.NHibernate;
 using Amarok.Bootstrap.Infrastructure.Repository;
 using Autofac;
 using Autofac.Integration.Mvc;
+using NHibernate;
+using System.Configuration;
 using System.Reflection;
 using System.Web.Mvc;
 
@@ -21,6 +25,10 @@ namespace Amarok.Bootstrap
 
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
             builder.Register(c => new ConcreteFeatureRepository()).As<IFeatureRepository>().InstancePerHttpRequest();
+            builder.RegisterInstance<ISessionFactory>(new SessionFactoryBuilder().Create(
+                ConfigurationManager.ConnectionStrings["Amarok_Dev"].ConnectionString, 
+                typeof(Entity).Assembly));
+            builder.Register(c => c.Resolve<ISessionFactory>().OpenSession()).As<ISession>().InstancePerHttpRequest();
 
             #endregion
 
