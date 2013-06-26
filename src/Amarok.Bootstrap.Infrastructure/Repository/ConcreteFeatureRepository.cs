@@ -5,15 +5,9 @@ using System.Collections.Generic;
 
 namespace Amarok.Bootstrap.Infrastructure.Repository
 {
-    public class ConcreteFeatureRepository : IFeatureRepository
+    public class ConcreteFeatureRepository : RepositoryNH<Feature>, IFeatureRepository
     {
-        private ISession session;
-        public ConcreteFeatureRepository(ISession session)
-        {
-            this.session = session;
-        }
-
-        public ConcreteFeatureRepository() { }
+        public ConcreteFeatureRepository(ISession session) : base(session) { }
 
         public IEnumerable<string> ActiveFeatures()
         {

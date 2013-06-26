@@ -24,6 +24,7 @@ namespace Amarok.Bootstrap
             #region Custom Dependencies
 
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
+            builder.RegisterGeneric(typeof(RepositoryNH<>)).As(typeof(IRepository<>)).InstancePerHttpRequest();
             builder.RegisterType<ConcreteFeatureRepository>().As<IFeatureRepository>().InstancePerHttpRequest();
             builder.RegisterInstance<ISessionFactory>(new SessionFactoryBuilder().Create(ConfigurationManager.ConnectionStrings["Amarok_Db"].ConnectionString, typeof(Entity).Assembly));
             builder.Register(c => c.Resolve<ISessionFactory>().OpenSession()).As<ISession>().InstancePerHttpRequest();

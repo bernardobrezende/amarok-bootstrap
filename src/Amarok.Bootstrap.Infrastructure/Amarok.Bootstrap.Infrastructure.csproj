@@ -53,6 +53,7 @@
     <Compile Include="Mapping\NHibernate\SessionFactoryBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\ConcreteFeatureRepository.cs" />
+    <Compile Include="Repository\RepositoryNH.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Amarok.Bootstrap.Domain\Amarok.Bootstrap.Domain.csproj">
