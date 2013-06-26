@@ -1,7 +1,9 @@
-﻿using FluentNHibernate.Automapping;
+﻿using Amarok.Bootstrap.Domain.Entities;
+using FluentNHibernate.Automapping;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
+using NHibernate.Tool.hbm2ddl;
 using System.Reflection;
 
 namespace Amarok.Bootstrap.Infrastructure.Mapping.NHibernate
@@ -13,9 +15,13 @@ namespace Amarok.Bootstrap.Infrastructure.Mapping.NHibernate
             var sessionFactory = Fluently.Configure()
                 //.Database(SQLiteConfiguration.Standard.InMemory)
                 .Database(MsSqlConfiguration.MsSql2008.ConnectionString(connectionString))
-                .Mappings(m => m.AutoMappings.Add(
-                    new AutoPersistenceModel().AddMappingsFromAssembly(mappingAssembly)
-                .Where(type => type.Namespace.EndsWith("Entities"))))
+                .Mappings(x =>
+                {
+                    x.AutoMappings.Add(AutoMap.Assembly(mappingAssembly)
+                    .IgnoreBase<Entity>()
+                    .Where(type => type.Namespace.EndsWith("Entities")));
+                })
+                .ExposeConfiguration(cfg => new SchemaUpdate(cfg).Execute(true, true))
                 .BuildSessionFactory();
 
             return sessionFactory;
