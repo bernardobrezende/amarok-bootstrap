@@ -15,7 +15,7 @@ namespace Amarok.Bootstrap.WebApi
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            DependenciesConfig.RegisterDependencies();
         }
     }
 }

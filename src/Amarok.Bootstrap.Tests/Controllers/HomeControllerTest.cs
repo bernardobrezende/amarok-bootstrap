@@ -1,4 +1,5 @@
 ﻿using Amarok.Bootstrap.Controllers;
+using Amarok.Bootstrap.Domain.Entities;
 using Amarok.Bootstrap.Domain.Repository;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
@@ -10,7 +11,7 @@ namespace Amarok.Bootstrap.Tests.Controllers
     public class HomeControllerTest
     {
         private IFeatureRepository featureRepository;
-        private string[] fakeFeatures = new[] { "Feat1", "Feat2", "Feat3" };
+        private Feature[] fakeFeatures = new[] { new Feature("Login", true), new Feature("SalesReport", false), new Feature("AuthorizeUsers", true) };
 
         [TestInitialize]
         public void TearUp()
