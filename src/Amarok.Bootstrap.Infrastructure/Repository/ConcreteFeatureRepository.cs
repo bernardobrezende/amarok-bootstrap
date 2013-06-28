@@ -9,10 +9,10 @@ namespace Amarok.Bootstrap.Infrastructure.Repository
     {
         public ConcreteFeatureRepository(ISession session) : base(session) { }
 
-        public IEnumerable<string> ActiveFeatures()
+        public IEnumerable<Feature> ActiveFeatures()
         {
             // TODO: Provide real implementation.
-            return new[] { "Main", "Contact", "Register" };
+            return new[] { new Feature("Login", true), new Feature("SalesReport", false), new Feature("AuthorizeUsers", true) };
         }
     }
 }
