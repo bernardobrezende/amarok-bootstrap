@@ -9,16 +9,22 @@
             </hgroup>
             <p>
                 Active features:
-                <ul>
-                @foreach (var ft in ViewBag.ActiveFeatures) {
-                    <li><mark>@ft</mark></li>
-                }
+                <ul data-bind="foreach: features">
+                    <li data-bind="visible: IsActive">
+                        <mark data-bind="text: Name"></mark>
+                    </li>
                 </ul>
             </p>
         </div>
     </section>
 }
 <h3>We suggest the following:</h3>
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/Views/Home.js"></script>
+    <script type="text/javascript">
+        amarok.bootstrap.web.home.init();
+    </script>
+}
 <ol class="round">
     <li class="one">
         <h5>Getting Started</h5>

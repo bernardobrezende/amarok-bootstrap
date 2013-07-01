@@ -6,7 +6,6 @@
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
     </head>
     <body>
         <header>
@@ -38,8 +37,14 @@
                 </div>
             </div>
         </footer>
-
         @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/knockoutjs")
+        <script>
+            // creating default js namespaces
+            if (!amarok) var amarok = {};
+            if (!amarok.bootstrap) amarok.bootstrap = {};
+            if (!amarok.bootstrap.web) amarok.bootstrap.web = {};
+        </script>
         @RenderSection("scripts", required: false)
     </body>
 </html>
