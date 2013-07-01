@@ -1,5 +1,6 @@
 ﻿using Amarok.Bootstrap.WebApi.CustomConfigs;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Dispatcher;
 
 namespace Amarok.Bootstrap.WebApi
@@ -14,6 +15,8 @@ namespace Amarok.Bootstrap.WebApi
                 defaults: new { id = RouteParameter.Optional }
             );
 
+            config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
+            
             config.Services.Replace(typeof(IHttpControllerSelector), new VersioningByNamespaceHttpControllerSelector(config));
         }
     }
